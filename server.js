@@ -7,7 +7,7 @@ const date = require('./modules/utils');
 const messages = require('./modules/messages');
 
 // define our port
-const PORT = process.env.port || 8888;
+const port = process.env.PORT || 8888;
 
 // listen on the port
 http.createServer(function(req,res) {
@@ -15,5 +15,5 @@ http.createServer(function(req,res) {
     let currentDate = date.date();
     let param = url.parse(req.url,true);
     res.end(messages.part1 + param.query["name"]  + messages.part2 + currentDate);
-}).listen(PORT);
+}).listen(port);
 
